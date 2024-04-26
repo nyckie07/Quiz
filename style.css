@@ -1,0 +1,248 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  background-color: #dadada;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #F0F8FF;
+  width: 90%;
+  max-width: 800px;
+
+  border: 2px solid #e1e1e6;
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: 0 0 2px 2px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.controls-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  margin-top: 20px; 
+}
+
+.phase-button {
+  margin: 10px 0;
+}
+
+
+.controls-container2 p{
+  color: black;
+  text-align: justify;
+  margin-top: 20px;
+}
+
+
+.questions-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.question {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: black; 
+  }
+
+.answers-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+}
+
+.answer {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  width: 100%; 
+  height: 60px; 
+  margin-bottom: 16px; 
+}
+
+.answer:disabled {
+  cursor: not-allowed;
+}
+
+.next-question {
+  margin-top: 32px;
+}
+
+.button {
+  background-color: #4863f7;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: 0;
+  border-radius: 6px;
+  height: 48px;
+  padding: 0 32px;
+
+  transition: filter 0.1s;
+}
+
+.button:not(:disabled):hover {
+  filter: brightness(0.8);
+}
+
+/* Finish game */
+.final-message {
+  font-size: 20px;
+  text-align: center;
+  color: black;
+}
+
+.final-message span {
+  display: block;
+  margin-top: 8px;
+}
+
+.hide {
+  display: none;
+}
+
+.correct {
+  background-color: #049b48;
+}
+
+.incorrect {
+  background-color: #a10101;
+}
+
+
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: linear-gradient(45deg, transparent 5%, #4863f7 5%);
+  border: 0;
+  color: #fff;
+  padding: 16px 20px;
+  font-size: 18px;
+  letter-spacing: 3px;
+  line-height: 1;
+  box-shadow: 6px 0px 0px #FF7F50;
+  outline: transparent;
+  cursor: pointer;
+}
+
+.back-button::after {
+  content: "Voltar";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #00e6f6 3%, #00e6f6 5%, #ff013c 5%);
+  clip-path: inset(50% 50% 50% 50%);
+  text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+}
+
+.back-button:hover::after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+ 0% {
+  clip-path: inset(80% -6px 0 0);
+  transform: translate(-20px, -10px);
+ }
+
+ 10% {
+  clip-path: inset(10% -6px 85% 0);
+  transform: translate(10px, 10px);
+ }
+
+ 20% {
+  clip-path: inset(80% -6px 0 0);
+  transform: translate(-10px, 10px);
+ }
+
+ 30% {
+  clip-path: inset(10% -6px 85% 0);
+  transform: translate(0px, 5px);
+ }
+
+ 40% {
+  clip-path: inset(50% -6px 30% 0);
+  transform: translate(-5px, 0px);
+ }
+
+ 50% {
+  clip-path: inset(10% -6px 85% 0);
+  transform: translate(5px, 0px);
+ }
+
+ 60% {
+  clip-path: inset(40% -6px 43% 0);
+  transform: translate(5px, 10px);
+ }
+
+ 70% {
+  clip-path: inset(50% -6px 30% 0);
+  transform: translate(-10px, 10px);
+ }
+
+ 80% {
+  clip-path: inset(80% -6px 5% 0);
+  transform: translate(20px, -10px);
+ }
+
+ 90% {
+  clip-path: inset(80% -6px 0 0);
+  transform: translate(-10px, 0px);
+ }
+
+ 100% {
+  clip-path: inset(80% -6px 0 0);
+  transform: translate(0px, 0px);
+ }
+}
+
+
+
+/*responsividade*/
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 8px;
+  }
+  
+  .question {
+    font-size: 20px;
+  }
+  
+  .answer {
+    min-width: 120px;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  
+  .button {
+    padding: 0 16px;
+  }
+}

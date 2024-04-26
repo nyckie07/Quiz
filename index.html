@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="java.js" async></script>
+  
+  <title>Quiz: Proteja Seus Dados</title>
+</head>
+<body>
+
+  <!-- Botão de voltar com animação de glitch -->
+  <button class="back-button" onclick="redirect()">
+    <i class="fas fa-arrow-left"></i>Voltar</button>
+
+  <div class="container">
+    
+    <h2 style="color: black;">Instruções</h2> <!-- Adiciona a cor preta ao título "Instruções" -->
+    <div class="controls-container2">
+      <p>1. O quiz possui 10 perguntas em uma única fase, divididas em três níveis: Fácil, Médio e Difícil.</p>
+      <p>2. As perguntas no quiz são baseadas no conteúdo visto no site sobre cibersegurança.</p>
+      <p>3. Ao final do jogo, serão exibidas as quantidades de perguntas respondidas corretamente e incorretamente.</p>
+      <p>4. *Ao clicar no botão "Voltar" no topo, você será redirecionado para a página principal do site.*</p>
+    </div>
+
+    <div class="controls-container">
+      <button class="start-quiz button" data-phase="easy">Iniciar quiz</button>
+    </div>
+    <div class="questions-container hide">
+      <span class="question">Pergunta aqui?</span>
+      <div class="answers-container">
+        <button class="answer button">Resposta 1</button>
+        <button class="answer button">Resposta 2</button>
+        <button class="answer button">Resposta 3</button>
+        <button class="answer button">Resposta 4</button>
+      </div>
+    </div>
+    <div class="controls-container">
+      <button class="next-question button hide">Próxima pergunta</button>
+    </div>
+  </div>
+</body>
+</html>
